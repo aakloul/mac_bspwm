@@ -1,0 +1,55 @@
+## Fonts
+
+explore https://github.com/ryanoasis/nerd-fonts
+
+wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip \
+&& cd ~/.local/share/fonts \
+&& unzip JetBrainsMono.zip \
+&& rm JetBrainsMono.zip \
+&& fc-cache -fv
+
+## OTF fonts
+
+move font to /usr/share/fonts/opentype 
+fc-cache -f -v
+
+## command not found
+
+1. find package name in https://command-not-found.com/
+2. download for your distro and arch: https://packages.debian.org/bookworm/amd64/calcurse/download
+3. sudo dpkg -i <package name>
+4. sudo dpkg-query -L calcurse
+
+# oh-my-Zshell and powerlevel10k
+
+https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#installation
+
+# nvidia drivers
+
+sudo apt search linux-headers-`uname -r`
+sudo apt install nvidia-tesla-470-driver nvidia-detect nvidia-xconfig
+sudo nvidia-xconfig
+sudo nvim /etc/default/grub
+# edit: GRUB_CMDLINE_LINUX_DEFAULT="quiet nvidia-drm.modeset=1 nvidia-drm.fbdev=1"
+sudo update-grub
+
+# change screen resolution
+
+xrandr --output HDMI-0 --mode 1920x1080
+
+# Grub theme
+
+https://www.gnome-look.org/p/2218890
+comes with an installation script
+or edit /etc/default/grub or /etc/default/grub.conf/*
+look at files in /etc/default/grub.d/* for any configuration conflict
+sudo update-grub
+
+# Picom
+
+sudo apt install libconfig-dev libdbus-1-dev libegl-dev libev-dev libgl-dev libepoxy-dev libpcre2-dev libpixman-1-dev libx11-xcb-dev libxcb1-dev libxcb-composite0-dev libxcb-damage0-dev libxcb-glx0-dev libxcb-image0-dev libxcb-present-dev libxcb-randr0-dev libxcb-render0-dev libxcb-render-util0-dev libxcb-shape0-dev libxcb-util-dev libxcb-xfixes0-dev meson ninja-build uthash-dev
+
+# xscreensaver
+
+sudo apt install xscreensaver kali-screensaver xscreensaver-data-extra
+
