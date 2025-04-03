@@ -62,9 +62,11 @@ for process in "${processes[@]}"; do
 done
 
 # Load bars and/or eww widgets
-eww -c "$HOME"/.config/bspwm/ryan/src/eww daemon &
+#eww -c "$HOME"/.config/bspwm/ryan/src/eww daemon &
+eww -c ~/.config/bspwm/ryan/src/eww daemon &
 #polybar -q ryan-bar -c "$HOME"/.config/bspwm/ryan/config.ini &
-eww --config "$HOME"/.config/bspwm/ryan/src/eww open bar & 
+#eww --config "$HOME"/.config/bspwm/ryan/src/eww open bar & 
+eww -c ~/.config/bspwm/ryan/src/eww open bar & 
 
 # Launch picom // If you have old hardware or encounter problems
 # uncomment the picom "--legacy-backends" line and comment the current one.

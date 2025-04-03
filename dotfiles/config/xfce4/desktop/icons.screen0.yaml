@@ -12,16 +12,30 @@ configs:
       width: 2560
       height: 1440
   icons:
+    "4d0a5a4a-619f-4912-840b-b85bf90a9f46":
+      row: 3
+      col: 0
+      last_seen: 1742372122160646
+- level: 0
+  monitors:
+  - id: "6c7433f25a82f09a568d60896aae865fb3e7b516"
+    display_name: "Apple Computer Inc Color LCD (DP-2)"
+    geometry:
+      x: 0
+      y: 0
+      width: 2880
+      height: 1800
+  icons:
+    "4680e0a3-a9c8-4fa9-a428-9b3116554987":
+      row: 3
+      col: 0
+      last_seen: 1743127257850201
     "/":
       row: 1
       col: 0
     "trash:///":
       row: 2
       col: 0
-    "4d0a5a4a-619f-4912-840b-b85bf90a9f46":
-      row: 3
-      col: 0
-      last_seen: 1742372122160646
     "/home/adel":
       row: 0
       col: 0

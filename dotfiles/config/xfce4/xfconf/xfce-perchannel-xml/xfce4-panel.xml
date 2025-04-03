@@ -38,6 +38,8 @@
   <property name="plugins" type="empty">
     <property name="plugin-1" type="string" value="whiskermenu">
       <property name="recent" type="array">
+        <value type="string" value="xfce4-terminal-emulator.desktop"/>
+        <value type="string" value="Alacritty.desktop"/>
         <value type="string" value="timeshift-gtk.desktop"/>
       </property>
     </property>
@@ -168,8 +170,12 @@
       <property name="square-icons" type="bool" value="true"/>
       <property name="symbolic-icons" type="bool" value="false"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="polkit-mate-authentication-agent-1"/>
         <value type="string" value="networkmanager applet"/>
         <value type="string" value="wi-fi network connection “3broadband_170d” active: 3broadband_170d (79%)"/>
+      </property>
+      <property name="known-items" type="array">
+        <value type="string" value="blueman"/>
       </property>
     </property>
     <property name="plugin-15" type="string" value="genmon"/>

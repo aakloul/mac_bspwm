@@ -49,7 +49,126 @@ sudo update-grub
 
 sudo apt install libconfig-dev libdbus-1-dev libegl-dev libev-dev libgl-dev libepoxy-dev libpcre2-dev libpixman-1-dev libx11-xcb-dev libxcb1-dev libxcb-composite0-dev libxcb-damage0-dev libxcb-glx0-dev libxcb-image0-dev libxcb-present-dev libxcb-randr0-dev libxcb-render0-dev libxcb-render-util0-dev libxcb-shape0-dev libxcb-util-dev libxcb-xfixes0-dev meson ninja-build uthash-dev
 
+
+sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev libgif-dev
+
 # xscreensaver
 
 sudo apt install xscreensaver kali-screensaver xscreensaver-data-extra
 
+# bleeding edge
+
+sudo tee /etc/apt/sources.list.d/kali-bleeding-edge.list <<EOF
+deb http://http.kali.org/kali kali-bleeding-edge main contrib non-free non-free-firmware
+EOF
+
+sudo apt install rustup
+rustup default stable
+cargo install wallust
+
+sudo apt install lsd zsh mercurial zplug neovim git cmake gcc autoconf 
+
+
+sudo apt install bspwm sxhkd polybar alacritty brightnessctl dunst rofi jq playerctl mpd ncmpcpp geany ranger mpc picom xdotool feh ueberzug maim pamixer libwebp-dev xdg-user-dirs nala webp-pixbuf-loader zsh zsh-autosuggestions zsh-syntax-highlighting thunar thunar-volman thunar-archive-plugin gvfs gvfs-backends engrampa  dmenu xdo jgmenu redshift fzf ytfzf yt-dlp gawk tumbler gpick xdg-utils python-is-python3 python3-gi gir1.2-nm-1.0 duf libglib2.0-bin btop ncdu bat wmctrl acpid xclip scrot acpi mpdris2 libplayerctl-dev gir1.2-playerctl-2.0 lxappearance bc cava fastfetch btop qt5-style-kvantum 
+
+
+sudo apt install ranger polybar sddm picom feh betterlockscreen 
+sudo systemctl restart sddm
+
+git clone https://github.com/elkowar/eww
+cargo build --release --no-default-features --featurpango gdk-pixbuf-2.0 cairoes x11
+cd target/release
+chmod +x ./eww
+cp ./eww /usr/local/bin
+
+# eww
+
+sudo apt install pango gdk-pixbuf-2.0 cairo
+sudo apt install librust-libdbus-sys-dev
+sudo apt install libdbusmenu-glib4
+sudo apt install libdbusmenu-glib
+sudo apt install libpango1.0-dev libgdk-pixbuf-2.0-dev libcairo2-dev  libatk1.0-dev libatkmm-1.6-dev librust-gtk-sys-0.18-dev 
+sudo apt install libdbusmenu-glib-dev 
+sudo apt install libdbusmenu-gtk3-dev
+
+wget https://github.com/erebe/greenclip/releases/download/v4.2/greenclip
+pkill greenclip && greenclip clear && greenclip daemon &
+
+sudo systemctl enable betterlockscreen
+sudo apt install gtk2-engines-murrine 
+
+
+cd ~/.local/share/icons
+wget https://github.com/ljmill/tokyo-night-icons/releases/download/v0.2.0/TokyoNight-SE.tar.bz2
+tar xjvf TokyoNight-SE.tar.bz2
+cd ~/.config/gtk-3.0
+nvim settings.ini
+lxappearance &
+
+# Install Snap software
+
+https://snapcraft.io/docs/get-started
+
+1. install snap
+
+  sudo apt update
+  sudo apt install snapd
+
+2. enable snapd and apparmor services
+
+	sudo systemctl enable --now snapd apparmor
+	#sudo systemctl start snapd.apparmor
+
+
+3. install the latest snapd
+
+	sudo snap install snapd
+
+4. install your software
+
+	sudo snap install hello-world
+	sudo snap install arduino
+	sudo snap install betaflight-configurator
+
+5. find, list and run your software
+
+	snap find "media player"
+	snap list
+	snap run hello-world
+
+
+
+# OpenHantek
+
+git clone https://github.com/OpenHantek/OpenHantek6022.git
+sudo sh LinuxSetup_AsRoot
+
+# Hantek6022API
+
+git clone https://github.com/Ho-Ro/Hantek6022API.git
+sudo apt install sdcc pkgconf python3-usb
+pip install libusb1
+pip install numpy
+cd examples
+python3 get_serial_number.py
+
+# Calibration
+
+https://github.com/Ho-Ro/Hantek6022API/blob/main/README.md#create-calibration-values-for-openhantek
+
+python3 calibrate_6022.py -e
+
+# Sigrok
+
+sudo apt install pulseview sigrok-firmware-fx2lafw
+
+# proton-vpn
+
+- https://protonvpn.com/support/official-linux-vpn-debian/
+
+
+# Brightnessctl
+
+brightnessctl -l
+brightnessctl -d gmux_backlight s 25%
+brightnessctl -d smc::kbd_backlight s 25%
