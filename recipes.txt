@@ -172,3 +172,4 @@ sudo apt install pulseview sigrok-firmware-fx2lafw
 brightnessctl -l
 brightnessctl -d gmux_backlight s 25%
 brightnessctl -d smc::kbd_backlight s 25%
+sudo apt install linux-headers-6.12.20-amd64 nvidia-tesla-470-driver nvidia-detect nvidia-xconfig
